@@ -6,15 +6,12 @@
 package com.qinliming;
 
 import com.qinliming.frame.Controller;
-import com.qinliming.frame.ann.View;
-import java.util.Map;
 
 /**
  *
  * @author qinliming
  */
 public class Tester extends Controller{
-    @View("hello.html")
     public void test(){
         
     }

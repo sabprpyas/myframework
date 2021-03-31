@@ -9,7 +9,6 @@ import com.qinliming.frame.ann.Cache;
 import com.qinliming.frame.ann.Method;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.qinliming.frame.ann.View;
 
 /**
  *
