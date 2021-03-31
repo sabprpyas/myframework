@@ -7,6 +7,7 @@ package com.qinliming.frame;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletConfig;
@@ -23,7 +24,34 @@ public class OtiumDispatcher extends HttpServlet {
 
     private String configClassName;
     private Config config;
+    private String view;
+    private ConcurrentHashMap<String,Controller> actions;
+    private boolean debug;
 
+    public boolean isDebug() {
+        return debug;
+    }
+
+    public void setDebug(boolean debug) {
+        this.debug = debug;
+    }
+
+    public String getView() {
+        return view;
+    }
+
+    public void setView(String view) {
+        this.view = view;
+    }
+
+    public ConcurrentHashMap<String, Controller> getActions() {
+        return actions;
+    }
+
+    public void setActions(ConcurrentHashMap<String, Controller> actions) {
+        this.actions = actions;
+    }
+    
     public Config getConfig() {
         return config;
     }
@@ -52,6 +80,9 @@ public class OtiumDispatcher extends HttpServlet {
         }
         this.setConfigClassName(config.getInitParameter("config"));
         this.setConfig(getCongfigInstance());
+        this.setActions((ConcurrentHashMap<String, Controller>) this.getConfig().getControllers());
+        this.setView(this.getConfig().getView());
+        this.setDebug(this.getConfig().getDebug());
     }
 
     private Config getCongfigInstance() {
@@ -94,9 +125,9 @@ public class OtiumDispatcher extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String method = request.getMethod();
-            System.out.println(config.getControllers());
-            System.out.println(config.getDebug());
-            System.out.println(config.getView());
+            System.out.println(this.actions);
+            System.out.println(this.view);
+            System.out.println(this.debug);
         }
     }
 
