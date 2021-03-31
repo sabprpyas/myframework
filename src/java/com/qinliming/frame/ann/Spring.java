@@ -18,6 +18,4 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
-public @interface Spring {
-    
-}
+public @interface Spring {}

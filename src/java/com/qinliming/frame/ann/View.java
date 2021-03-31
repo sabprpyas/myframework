@@ -19,5 +19,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 public @interface View {
-    
+    public String value() default "404.html";
 }

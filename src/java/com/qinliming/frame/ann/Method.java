@@ -19,5 +19,11 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 public @interface Method {
+
+    /**
+     *
+     * @return
+     */
+    public String value() default "get";
     
 }

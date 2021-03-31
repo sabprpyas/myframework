@@ -37,7 +37,7 @@ public class Controller {
     public String getSession(){
         return null;
     }
-    @View
+    @View("fuck.html")
     public void setSession(String key,Object value){
     
     }
