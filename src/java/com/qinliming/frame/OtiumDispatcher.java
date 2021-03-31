@@ -22,7 +22,16 @@ import javax.servlet.http.HttpServletResponse;
 public class OtiumDispatcher extends HttpServlet {
 
     private String configClassName;
+    private Config config;
 
+    public Config getConfig() {
+        return config;
+    }
+
+    public void setConfig(Config config) {
+        this.config = config;
+    }
+    
     public String getConfigClassName() {
         return configClassName;
     }
@@ -42,6 +51,7 @@ public class OtiumDispatcher extends HttpServlet {
             System.exit(0);
         }
         this.setConfigClassName(config.getInitParameter("config"));
+        this.setConfig(getCongfigInstance());
     }
 
     private Config getCongfigInstance() {
@@ -84,7 +94,9 @@ public class OtiumDispatcher extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String method = request.getMethod();
-
+            System.out.println(config.getControllers());
+            System.out.println(config.getDebug());
+            System.out.println(config.getView());
         }
     }
 

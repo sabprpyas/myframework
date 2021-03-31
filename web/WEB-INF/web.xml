@@ -5,7 +5,7 @@
         <servlet-class>com.qinliming.frame.OtiumDispatcher</servlet-class>
         <init-param>
             <param-name>config</param-name>
-            <param-value>com.qinliming.Config</param-value>
+            <param-value>com.qinliming.PConfig</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>

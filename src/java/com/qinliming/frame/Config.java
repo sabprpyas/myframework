@@ -33,8 +33,14 @@ public abstract class Config {
     public Map getControllers(){
         return Config.actions;
     }
-    
+    public boolean getDebug(){
+        return Config.debug;
+    }
+    public String getView(){
+        return Config.view;
+    }
     abstract public void view(View view);
     abstract public void router(Debug debug);
     abstract public void debug(Controllers controllers);
+    
 }
