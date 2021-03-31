@@ -7,7 +7,7 @@ package com.qinliming.frame;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.qinliming.frame.ann.View;
 /**
  *
  * @author qinliming
@@ -30,6 +30,16 @@ public class Controller {
 
     public void setResponse(HttpServletResponse response) {
         this.response = response;
+    }
+    public String get(String key){
+        return request.getParameter(key);
+    }
+    public String getSession(){
+        return null;
+    }
+    @View
+    public void setSession(String key,Object value){
+    
     }
     
     
