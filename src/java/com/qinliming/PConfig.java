@@ -18,16 +18,17 @@ public class PConfig extends Config{
 
     @Override
     public void view(View view) {
+        view.setView("jsp");
     }
 
     @Override
-    public void router(Debug debug) {
+    public void router(Controllers controller) {
+        
+    }
+
+    @Override
+    public void debug(Debug debug) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public void debug(Controllers controllers) {
-       
-    } 
-   
+    
 }

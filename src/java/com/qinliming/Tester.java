@@ -3,14 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.qinliming.frame;
+package com.qinliming;
+
+import com.qinliming.frame.Controller;
+import com.qinliming.frame.ann.View;
+import java.util.Map;
 
 /**
  *
  * @author qinliming
  */
-public class Controllers {
-    public void add(String router,Class controller){
-        Config.addController(router, controller);
+public class Tester extends Controller{
+    @View("hello.html")
+    public void test(){
+        
     }
 }

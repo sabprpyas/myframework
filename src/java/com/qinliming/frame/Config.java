@@ -5,6 +5,7 @@
  */
 package com.qinliming.frame;
 
+import com.qinliming.frame.ann.Spring;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -23,9 +24,18 @@ public abstract class Config {
     public static void setDebug(boolean debug){
         Config.debug = debug;
     } 
-    public static void addController(String router,Controller controller){
-        Config.actions.put(router, controller);
+    public static void addController(String router,Class controller){
+        
     }
+    
+    
+    public boolean Spring(Class cls){
+        if(null != cls.getAnnotation(Spring.class)){
+            return true;
+        }
+        return false;
+    }
+    
     /**
      *
      * @return 
@@ -40,7 +50,7 @@ public abstract class Config {
         return Config.view;
     }
     abstract public void view(View view);
-    abstract public void router(Debug debug);
-    abstract public void debug(Controllers controllers);
+    abstract public void router(Controllers controller);
+    abstract public void debug(Debug debug);
     
 }
