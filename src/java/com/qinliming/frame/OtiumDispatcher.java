@@ -7,6 +7,9 @@ package com.qinliming.frame;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +20,55 @@ import javax.servlet.http.HttpServletResponse;
  * @author qinliming
  */
 public class OtiumDispatcher extends HttpServlet {
+
+    private String configClassName;
+
+    public String getConfigClassName() {
+        return configClassName;
+    }
+
+    public void setConfigClassName(String configClassName) {
+        this.configClassName = configClassName;
+    }
+
+    /**
+     *
+     * @param config
+     */
+    @Override
+    public void init(ServletConfig config) {
+        if(null == config){
+            Logger.getLogger(OtiumDispatcher.class.getName()).log(Level.WARNING,"use null augument in init(ServletConfig config)");
+            System.exit(0);
+        }
+        this.setConfigClassName(config.getInitParameter("config"));
+    }
+
+    private Config getCongfigInstance() {
+        String config = this.getConfigClassName();
+        if (null != config) {
+            Config newConfig = (Config) this.getInstance(config);
+            return newConfig;
+        } else {
+            return null;
+            // need an exception
+        }
+
+    }
+
+    private Object getInstance(String name) {
+        if(null == name){
+            Logger.getLogger(OtiumDispatcher.class.getName()).log(Level.WARNING,"use an eror augument in getInstance(String name) ");
+            System.exit(0);
+        }
+        try {
+            Class obj = Class.forName(name);
+            return obj.newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(OtiumDispatcher.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,9 +83,8 @@ public class OtiumDispatcher extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String method;
-            method = request.getMethod();
-            System.out.println(method);
+            String method = request.getMethod();
+
         }
     }
 
