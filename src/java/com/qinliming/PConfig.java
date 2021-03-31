@@ -27,7 +27,7 @@ public class PConfig extends Config{
 
     @Override
     public void debug(Controllers controllers) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+       
+    } 
    
 }
