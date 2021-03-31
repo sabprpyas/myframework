@@ -18,7 +18,6 @@ public class PConfig extends Config{
 
     @Override
     public void view(View view) {
-        
     }
 
     @Override
