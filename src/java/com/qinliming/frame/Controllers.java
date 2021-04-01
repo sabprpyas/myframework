@@ -13,4 +13,7 @@ public class Controllers {
     public void add(String router,Class controller){
         Config.addController(router, controller);
     }
+    public void useSpring(String config){
+        Config.toUserSpring(config);
+    }
 }

@@ -6,11 +6,13 @@
 package com.qinliming;
 
 import com.qinliming.frame.Controller;
+import com.qinliming.frame.ann.Spring;
 
 /**
  *
  * @author qinliming
  */
+@Spring
 public class Tester extends Controller{
     public void test(){
         
