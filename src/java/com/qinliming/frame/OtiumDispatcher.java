@@ -80,6 +80,9 @@ public class OtiumDispatcher extends HttpServlet {
         }
         this.setConfigClassName(config.getInitParameter("config"));
         this.setConfig(getCongfigInstance());
+        this.getConfig().debug(new Debug());
+        this.getConfig().view(new View());
+        this.getConfig().router(new Controllers());
         this.setActions((ConcurrentHashMap<String, Controller>) this.getConfig().getControllers());
         this.setView(this.getConfig().getView());
         this.setDebug(this.getConfig().getDebug());

@@ -18,7 +18,7 @@ public class PConfig extends Config{
 
     @Override
     public void view(View view) {
-        view.setView("jsp");
+        view.setView("php");
     }
 
     @Override
@@ -28,7 +28,7 @@ public class PConfig extends Config{
 
     @Override
     public void debug(Debug debug) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
     }
     
 }

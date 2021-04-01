@@ -17,14 +17,18 @@ import org.springframework.context.ApplicationContext;
 public abstract class Config {
     
     public ApplicationContext ac;
-    
-    public Config(){
-        
+
+    public ApplicationContext getAc() {
+        return ac;
+    }
+
+    public void setAc(ApplicationContext ac) {
+        this.ac = ac;
     }
     private static String view = "jsp";
     private static boolean debug = true;
     private static boolean spring = false;
-    private static String sprngconf = null;
+    private static String springconf = null;
     private static final ConcurrentHashMap<String, Controller> actions = new ConcurrentHashMap<>();
     public static void setView(String view){
         Config.view = view;
@@ -38,6 +42,7 @@ public abstract class Config {
         }
     }
     public static void toUserSpring(String config){
+        Config.springconf = config;
         Config.spring = true;
     }    
     public static boolean Spring(Class cls){
