@@ -10,7 +10,7 @@ package com.qinliming.frame;
  * @author qinliming
  */
 public class Debug {
-     public void setView(boolean debug){
+     public void setDebug(boolean debug){
         Config.setDebug(debug);
      }
 }

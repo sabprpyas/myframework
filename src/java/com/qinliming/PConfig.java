@@ -23,12 +23,13 @@ public class PConfig extends Config{
 
     @Override
     public void router(Controllers controller) {
-        
+        controller.useSpring("config.xml");
+       // controller.add("/hello", Tester.class);
     }
 
     @Override
     public void debug(Debug debug) {
-      
+     debug.setDebug(true);
     }
     
 }
