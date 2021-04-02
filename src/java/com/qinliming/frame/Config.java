@@ -5,7 +5,6 @@
  */
 package com.qinliming.frame;
 
-import com.qinliming.frame.ann.Spring;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
@@ -55,7 +54,7 @@ public abstract class Config {
     }
 
     public static void addController(String router, Class controller) {
-        if (Config.Spring(controller) && Config.spring) {
+        if (Config.spring) {
             Logger.getLogger(Config.class.getName()).log(Level.INFO,"use spring to load class "+controller.getName());
             Controller ctrl = (Controller) ac.getBean(controller);
             Config.actions.put(router, ctrl);
@@ -74,14 +73,6 @@ public abstract class Config {
         Config.springconf = config;
         Config.spring = true;
     }
-
-    public static boolean Spring(Class cls) {
-        if (null != cls.getAnnotation(Spring.class)) {
-            return true;
-        }
-        return false;
-    }
-
     /**
      *
      * @return

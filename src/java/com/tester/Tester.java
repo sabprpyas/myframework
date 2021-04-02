@@ -6,14 +6,12 @@
 package com.tester;
 
 import com.qinliming.frame.Controller;
-import com.qinliming.frame.ann.Spring;
 import org.springframework.stereotype.Service;
 
 /**
  *
  * @author qinliming
  */
-@Spring
 @Service
 public class Tester extends Controller{
     public void test(){

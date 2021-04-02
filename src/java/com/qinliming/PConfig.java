@@ -19,13 +19,14 @@ public class PConfig extends Config{
 
     @Override
     public void view(View view) {
-        view.setView("php");
+        view.setView("jsp");
     }
 
     @Override
     public void router(Controllers controller) {
         controller.useSpring("config.xml");
         controller.add("/hello", Tester.class);
+        
     }
 
     @Override

@@ -19,7 +19,9 @@ public class Controller {
     public HttpServletRequest getRequest() {
         return request;
     }
-
+    public void bind(){
+        
+    }
     public void setRequest(HttpServletRequest request) {
         this.request = request;
     }
