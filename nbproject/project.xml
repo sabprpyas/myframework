@@ -22,6 +22,7 @@
         <spring-data xmlns="http://www.netbeans.org/ns/spring-data/1">
             <config-files>
                 <config-file>src/java/config.xml</config-file>
+                <config-file>src/java/config2.xml</config-file>
             </config-files>
             <config-file-groups/>
         </spring-data>

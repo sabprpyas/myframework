@@ -5,6 +5,7 @@
  */
 package com.qinliming;
 
+import com.tester.Tester;
 import com.qinliming.frame.Config;
 import com.qinliming.frame.Controllers;
 import com.qinliming.frame.Debug;
@@ -24,7 +25,7 @@ public class PConfig extends Config{
     @Override
     public void router(Controllers controller) {
         controller.useSpring("config.xml");
-       // controller.add("/hello", Tester.class);
+        controller.add("/hello", Tester.class);
     }
 
     @Override
