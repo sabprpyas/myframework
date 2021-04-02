@@ -42,10 +42,11 @@ public abstract class Config {
         Config.debug = debug;
     }
 
-    public void initSpring() {
+    public static void initSpring() {
+        System.out.println(Config.spring);
         if (Config.spring) {
             if (null != Config.springconf) {
-                this.setAc(new ClassPathXmlApplicationContext(Config.springconf));
+               Config.ac = new ClassPathXmlApplicationContext(Config.springconf);
             }
         } else {
             Logger.getLogger(Config.class.getName()).log(Level.WARNING, "you use spring but do not give a spring config file");
@@ -55,6 +56,7 @@ public abstract class Config {
 
     public static void addController(String router, Class controller) {
         if (Config.Spring(controller) && Config.spring) {
+            Logger.getLogger(Config.class.getName()).log(Level.INFO,"use spring to load class "+controller.getName());
             Controller ctrl = (Controller) ac.getBean(controller);
             Config.actions.put(router, ctrl);
         } else {

@@ -15,5 +15,6 @@ public class Controllers {
     }
     public void useSpring(String config){
         Config.toUserSpring(config);
+        Config.initSpring();
     }
 }
