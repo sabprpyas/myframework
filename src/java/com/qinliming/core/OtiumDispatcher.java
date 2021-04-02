@@ -127,10 +127,12 @@ public class OtiumDispatcher extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String method = request.getMethod();
-            System.out.println(this.actions);
-            System.out.println(this.view);
-            System.out.println(this.debug);
+            out.print(request.getRequestURI());
+            out.close();
+//            String method = request.getMethod();
+//            System.out.println(this.actions);
+//            System.out.println(this.view);
+//            System.out.println(this.debug);
         }
     }
 

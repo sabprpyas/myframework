@@ -6,6 +6,7 @@
 package com.tester;
 
 import com.qinliming.core.Controller;
+import com.qinliming.core.ann.View;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class Tester extends Controller{
+    
+    @View("hello.jsp")
     public void test(){
         
     }
