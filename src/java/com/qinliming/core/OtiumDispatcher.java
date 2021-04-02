@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.qinliming.frame;
+package com.qinliming.core;
 
 import java.io.IOException;
 import java.io.PrintWriter;

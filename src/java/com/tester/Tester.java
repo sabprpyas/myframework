@@ -5,7 +5,7 @@
  */
 package com.tester;
 
-import com.qinliming.frame.Controller;
+import com.qinliming.core.Controller;
 import org.springframework.stereotype.Service;
 
 /**

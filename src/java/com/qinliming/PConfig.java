@@ -6,10 +6,10 @@
 package com.qinliming;
 
 import com.tester.Tester;
-import com.qinliming.frame.Config;
-import com.qinliming.frame.Controllers;
-import com.qinliming.frame.Debug;
-import com.qinliming.frame.View;
+import com.qinliming.core.Config;
+import com.qinliming.core.Controllers;
+import com.qinliming.core.Debug;
+import com.qinliming.core.View;
 
 /**
  *

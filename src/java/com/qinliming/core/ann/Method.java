@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.qinliming.frame.ann;
+package com.qinliming.core.ann;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
@@ -18,6 +18,12 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
-public @interface Before {
-    public Class value();
+public @interface Method {
+
+    /**
+     *
+     * @return
+     */
+    public String value() default "get";
+    
 }
